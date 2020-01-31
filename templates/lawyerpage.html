@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>welcome {{lawyer.name}}</h1>
+  <table>
+        <tr>
+            <th>Case No</th>
+            <th>Case</th>
+            <th>Client Name</th>
+        </tr>
+        <tr>
+            {% for u in user %}
+                <td>{{u.caseno}}</td>
+                <td>{{u.case}}</td>
+                <td>{{u.name}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+
+
+</body>
+</html>

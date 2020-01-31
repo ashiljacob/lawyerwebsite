@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>User Dashboard</h1>
+
+<h2>Welcome {{member.name}}</h2>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <form method="post" action="{% url 'casefiling' %}">
+        {% csrf_token %}
+        <h3>File Case</h3>
+
+        <label>Case no</label><input type="text" name="caseno">
+        <label>Case </label><input type="text" name="case">
+        <label>Select Lawyer :</label>
+
+        <select name="lawyer" class="demo" tabindex="2">
+            {% for i in lawyer %}
+                <option >{{i.name}}</option>
+            {% endfor %}
+
+        <input type="Submit" value="Submit">
+
+    </form>
+</body>
+
+</html>
